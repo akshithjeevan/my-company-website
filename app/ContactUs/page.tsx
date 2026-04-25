@@ -27,7 +27,7 @@ export default function ContactUsPage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <div className="animate-hero-badge inline-flex items-center gap-2 rounded-full border border-purple-200 dark:border-purple-500/30 bg-purple-50/50 dark:bg-purple-900/20 px-4 py-2 text-sm text-purple-700 dark:text-purple-300 backdrop-blur-sm mb-6 transition-colors">
+          <div className="animate-hero-badge inline-flex items-center gap-2 rounded-full border border-purple-200 dark:border-purple-500/30 bg-purple-50/50 dark:bg-black px-4 py-2 text-sm text-purple-700 dark:text-purple-300 backdrop-blur-sm mb-6 transition-colors">
             <MessageSquare className="h-4 w-4" />
             Contact Us
           </div>
@@ -48,15 +48,15 @@ export default function ContactUsPage() {
 
           {/* Stats Bar */}
           <div className="animate-hero-cta mt-12 flex flex-wrap justify-center gap-4 sm:gap-8">
-            <div className="flex items-center gap-2 rounded-2xl border border-violet-300/60 dark:border-white/[0.08] bg-white/70 dark:bg-white/[0.03] px-6 py-3 backdrop-blur-md shadow-sm dark:shadow-none">
+            <div className="flex items-center gap-2 rounded-2xl border border-violet-300/60 dark:border-white/[0.08] bg-white/70 dark:bg-black px-6 py-3 backdrop-blur-md shadow-sm dark:shadow-none">
               <Zap className="h-5 w-5 text-purple-600 dark:text-purple-400" />
               <span className="text-sm font-semibold text-purple-950 dark:text-white">24hr Response Time</span>
             </div>
-            <div className="flex items-center gap-2 rounded-2xl border border-violet-300/60 dark:border-white/[0.08] bg-white/70 dark:bg-black/40 px-6 py-3 backdrop-blur-md shadow-sm dark:shadow-none">
+            <div className="flex items-center gap-2 rounded-2xl border border-violet-300/60 dark:border-white/[0.08] bg-white/70 dark:bg-black px-6 py-3 backdrop-blur-md shadow-sm dark:shadow-none">
               <CheckCircle2 className="h-5 w-5 text-purple-600 dark:text-purple-400" />
               <span className="text-sm font-semibold text-purple-950 dark:text-white">25+ Projects Delivered</span>
             </div>
-            <div className="flex items-center gap-2 rounded-2xl border border-violet-300/60 dark:border-white/[0.08] bg-white/70 dark:bg-black/40 px-6 py-3 backdrop-blur-md shadow-sm dark:shadow-none">
+            <div className="flex items-center gap-2 rounded-2xl border border-violet-300/60 dark:border-white/[0.08] bg-white/70 dark:bg-black px-6 py-3 backdrop-blur-md shadow-sm dark:shadow-none">
               <Star className="h-5 w-5 text-purple-600 dark:text-purple-400" />
               <span className="text-sm font-semibold text-purple-950 dark:text-white">5★ Client Satisfaction</span>
             </div>
@@ -79,9 +79,9 @@ export default function ContactUsPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
             {/* Email Card */}
-            <div className="group relative flex flex-col rounded-[2rem] border border-violet-200/70 dark:border-purple-500/24 bg-white/75 dark:bg-[rgba(14,9,28,0.72)] p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.20)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] dark:hover:shadow-[0_0_50px_rgba(109,40,217,0.38)] transition-all duration-500 overflow-hidden backdrop-blur-md">
+            <div className="group relative flex flex-col rounded-[2rem] border border-violet-200/70 dark:border-purple-500/24 bg-white/75 dark:bg-black p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.20)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] dark:hover:shadow-[0_0_50px_rgba(109,40,217,0.38)] transition-all duration-500 overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 left-0 right-0 h-[2px] dark:h-[2px] bg-gradient-to-r from-transparent via-purple-500/80 dark:via-purple-400/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/10 dark:bg-purple-600/22 border border-purple-500/20 dark:border-purple-500/38 text-purple-600 dark:text-purple-300 group-hover:bg-purple-600/20 dark:group-hover:bg-purple-600/35 transition-colors duration-300 mb-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/10 dark:bg-black border border-purple-500/20 dark:border-purple-500/38 text-purple-600 dark:text-purple-300 group-hover:bg-purple-600/20 dark:group-hover:bg-purple-600/35 transition-colors duration-300 mb-6">
                 <Mail className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-purple-950 dark:text-white mb-2 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors">Email Us</h3>
@@ -94,9 +94,9 @@ export default function ContactUsPage() {
             </div>
 
             {/* WhatsApp Card */}
-            <div className="group relative flex flex-col rounded-[2rem] border border-violet-200/70 dark:border-purple-500/24 bg-white/75 dark:bg-[rgba(14,9,28,0.72)] p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.20)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] dark:hover:shadow-[0_0_50px_rgba(109,40,217,0.38)] transition-all duration-500 overflow-hidden backdrop-blur-md">
+            <div className="group relative flex flex-col rounded-[2rem] border border-violet-200/70 dark:border-purple-500/24 bg-white/75 dark:bg-black p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.20)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] dark:hover:shadow-[0_0_50px_rgba(109,40,217,0.38)] transition-all duration-500 overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 left-0 right-0 h-[2px] dark:h-[2px] bg-gradient-to-r from-transparent via-purple-500/80 dark:via-purple-400/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/10 dark:bg-purple-600/22 border border-purple-500/20 dark:border-purple-500/38 text-purple-600 dark:text-purple-300 group-hover:bg-purple-600/20 dark:group-hover:bg-purple-600/35 transition-colors duration-300 mb-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/10 dark:bg-black border border-purple-500/20 dark:border-purple-500/38 text-purple-600 dark:text-purple-300 group-hover:bg-purple-600/20 dark:group-hover:bg-purple-600/35 transition-colors duration-300 mb-6">
                 <MessageSquare className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-purple-950 dark:text-white mb-2 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors">WhatsApp</h3>
@@ -109,9 +109,9 @@ export default function ContactUsPage() {
             </div>
 
             {/* Call Card */}
-            <div className="group relative flex flex-col rounded-[2rem] border border-violet-200/70 dark:border-purple-500/24 bg-white/75 dark:bg-[rgba(14,9,28,0.72)] p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.20)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] dark:hover:shadow-[0_0_50px_rgba(109,40,217,0.38)] transition-all duration-500 overflow-hidden backdrop-blur-md">
+            <div className="group relative flex flex-col rounded-[2rem] border border-violet-200/70 dark:border-purple-500/24 bg-white/75 dark:bg-black p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.20)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] dark:hover:shadow-[0_0_50px_rgba(109,40,217,0.38)] transition-all duration-500 overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 left-0 right-0 h-[2px] dark:h-[2px] bg-gradient-to-r from-transparent via-purple-500/80 dark:via-purple-400/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/10 dark:bg-purple-600/22 border border-purple-500/20 dark:border-purple-500/38 text-purple-600 dark:text-purple-300 group-hover:bg-purple-600/20 dark:group-hover:bg-purple-600/35 transition-colors duration-300 mb-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/10 dark:bg-black border border-purple-500/20 dark:border-purple-500/38 text-purple-600 dark:text-purple-300 group-hover:bg-purple-600/20 dark:group-hover:bg-purple-600/35 transition-colors duration-300 mb-6">
                 <Phone className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-purple-950 dark:text-white mb-2 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors">Call Us</h3>
@@ -124,9 +124,9 @@ export default function ContactUsPage() {
             </div>
 
             {/* Schedule Card */}
-            <div className="group relative flex flex-col rounded-[2rem] border border-violet-200/70 dark:border-purple-500/24 bg-white/75 dark:bg-[rgba(14,9,28,0.72)] p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.20)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] dark:hover:shadow-[0_0_50px_rgba(109,40,217,0.38)] transition-all duration-500 overflow-hidden backdrop-blur-md">
+            <div className="group relative flex flex-col rounded-[2rem] border border-violet-200/70 dark:border-purple-500/24 bg-white/75 dark:bg-black p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.20)] hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(139,92,246,0.15)] dark:hover:shadow-[0_0_50px_rgba(109,40,217,0.38)] transition-all duration-500 overflow-hidden backdrop-blur-md">
               <div className="absolute top-0 left-0 right-0 h-[2px] dark:h-[2px] bg-gradient-to-r from-transparent via-purple-500/80 dark:via-purple-400/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/10 dark:bg-purple-600/22 border border-purple-500/20 dark:border-purple-500/38 text-purple-600 dark:text-purple-300 group-hover:bg-purple-600/20 dark:group-hover:bg-purple-600/35 transition-colors duration-300 mb-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/10 dark:bg-black border border-purple-500/20 dark:border-purple-500/38 text-purple-600 dark:text-purple-300 group-hover:bg-purple-600/20 dark:group-hover:bg-purple-600/35 transition-colors duration-300 mb-6">
                 <Calendar className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-purple-950 dark:text-white mb-2 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors">Schedule Meeting</h3>
@@ -157,7 +157,7 @@ export default function ContactUsPage() {
                 We're here to help you succeed with your digital transformation journey. Connect with us through any of these channels.
               </p>
 
-              <div className="rounded-[2rem] border border-violet-200/70 dark:border-purple-500/26 bg-white/75 dark:bg-[rgba(14,9,28,0.72)] p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.18)] backdrop-blur-md">
+              <div className="rounded-[2rem] border border-violet-200/70 dark:border-purple-500/26 bg-white/75 dark:bg-black p-8 shadow-[0_4px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_4px_36px_rgba(109,40,217,0.18)] backdrop-blur-md">
                 <h3 className="text-xl font-bold text-purple-950 dark:text-white mb-4">Fast Response Time</h3>
                 <p className="text-sm leading-6 text-purple-900/70 dark:text-gray-400">
                   We typically respond to all inquiries within 24 hours during business days. For urgent matters, WhatsApp is your best option.
@@ -167,7 +167,7 @@ export default function ContactUsPage() {
 
             {/* Right Grid */}
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="rounded-[1.5rem] border border-violet-200/70 dark:border-purple-500/22 bg-white/80 dark:bg-[rgba(14,9,28,0.68)] p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-[0_4px_24px_rgba(109,40,217,0.15)] dark:hover:shadow-[0_0_32px_rgba(109,40,217,0.30)]">
+              <div className="rounded-[1.5rem] border border-violet-200/70 dark:border-purple-500/22 bg-white/80 dark:bg-black p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-[0_4px_24px_rgba(109,40,217,0.15)] dark:hover:shadow-[0_0_32px_rgba(109,40,217,0.30)]">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-600/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 mb-4">
                   <MapPin className="h-5 w-5" />
                 </div>
@@ -175,7 +175,7 @@ export default function ContactUsPage() {
                 <p className="text-sm text-purple-900/70 dark:text-gray-400">Kerala, India</p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-violet-200/70 dark:border-purple-500/22 bg-white/80 dark:bg-[rgba(14,9,28,0.68)] p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-[0_4px_24px_rgba(109,40,217,0.15)] dark:hover:shadow-[0_0_32px_rgba(109,40,217,0.30)]">
+              <div className="rounded-[1.5rem] border border-violet-200/70 dark:border-purple-500/22 bg-white/80 dark:bg-black p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-[0_4px_24px_rgba(109,40,217,0.15)] dark:hover:shadow-[0_0_32px_rgba(109,40,217,0.30)]">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-600/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 mb-4">
                   <Clock className="h-5 w-5" />
                 </div>
@@ -183,7 +183,7 @@ export default function ContactUsPage() {
                 <p className="text-sm text-purple-900/70 dark:text-gray-400">Monday - Friday<br />9:00 AM - 6:00 PM</p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-violet-200/70 dark:border-purple-500/22 bg-white/80 dark:bg-[rgba(14,9,28,0.68)] p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-[0_4px_24px_rgba(109,40,217,0.15)] dark:hover:shadow-[0_0_32px_rgba(109,40,217,0.30)]">
+              <div className="rounded-[1.5rem] border border-violet-200/70 dark:border-purple-500/22 bg-white/80 dark:bg-black p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-[0_4px_24px_rgba(109,40,217,0.15)] dark:hover:shadow-[0_0_32px_rgba(109,40,217,0.30)]">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-600/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 mb-4">
                   <Mail className="h-5 w-5" />
                 </div>
@@ -191,7 +191,7 @@ export default function ContactUsPage() {
                 <p className="text-sm text-purple-900/70 dark:text-gray-400">info@Zyntrix.co.in</p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-violet-200/70 dark:border-purple-500/22 bg-white/80 dark:bg-[rgba(14,9,28,0.68)] p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-[0_4px_24px_rgba(109,40,217,0.15)] dark:hover:shadow-[0_0_32px_rgba(109,40,217,0.30)]">
+              <div className="rounded-[1.5rem] border border-violet-200/70 dark:border-purple-500/22 bg-white/80 dark:bg-black p-6 group hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-[0_4px_24px_rgba(109,40,217,0.15)] dark:hover:shadow-[0_0_32px_rgba(109,40,217,0.30)]">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-600/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 mb-4">
                   <MessageSquare className="h-5 w-5" />
                 </div>
@@ -224,7 +224,7 @@ export default function ContactUsPage() {
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 rounded-xl border border-purple-200 dark:border-white/10 bg-white dark:bg-white/[0.04] px-8 py-4 text-base font-semibold text-purple-700 dark:text-gray-300 transition-all duration-300 hover:border-purple-400 dark:hover:border-purple-500/40 hover:text-purple-800 dark:hover:text-white hover:shadow-[0_10px_20px_rgba(168,85,247,0.15)] dark:hover:shadow-none hover:-translate-y-1 dark:hover:translate-y-0"
+              className="inline-flex items-center gap-2 rounded-xl border border-purple-200 dark:border-white/10 bg-white dark:bg-black px-8 py-4 text-base font-semibold text-purple-700 dark:text-gray-300 transition-all duration-300 hover:border-purple-400 dark:hover:border-purple-500/40 hover:text-purple-800 dark:hover:text-white hover:shadow-[0_10px_20px_rgba(168,85,247,0.15)] dark:hover:shadow-none hover:-translate-y-1 dark:hover:translate-y-0"
             >
               Explore Our Services
             </Link>

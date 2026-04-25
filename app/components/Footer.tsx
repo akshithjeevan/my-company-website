@@ -43,7 +43,7 @@ export default function Footer() {
           <h3 className="font-semibold mb-4 text-foreground dark:text-white">Contact Info</h3>
           <ul className="space-y-3 text-muted-foreground dark:text-gray-400 font-light">
             <li>Kerala, India</li>
-            <li><a href="mailto:info@zyntrix.co.in" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">info@zyntrix.co.in</a></li>
+            <li><a href="mailto:akshithjeevan2000@gmail.com" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">akshithjeevan2000@gmail.com</a></li>
             <li><a href="tel:+919188426776" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">+91 9188426776</a></li>
             <li>Mon - Fri: 9:00 AM - 6:00 PM</li>
           </ul>
