@@ -1,30 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  /* Rich warm-violet light mode palette */
-  --background: #f5f3ff;
-  --foreground: #1e1230;
-  --card: rgba(255, 255, 255, 0.85);
-  --card-foreground: #1e1230;
+  /* Premium Crystal Light Mode Palette */
+  --background: #fdfaff;
+  --foreground: #1a1128;
+  --card: rgba(255, 255, 255, 0.65);
+  --card-foreground: #1a1128;
   --popover: #ffffff;
-  --popover-foreground: #1e1230;
-  --primary: #7c3aed;
+  --popover-foreground: #1a1128;
+  --primary: #6d28d9;
   --primary-foreground: #ffffff;
-  --secondary: #ede9fe;
+  --secondary: #f5f3ff;
   --secondary-foreground: #4c1d95;
-  --muted: #ede9fe;
-  --muted-foreground: #6d4a9c;
-  --accent: #ddd6fe;
+  --muted: #f5f3ff;
+  --muted-foreground: #6b7280;
+  --accent: #f3f0ff;
   --accent-foreground: #4c1d95;
-  --destructive: #dc2626;
-  --destructive-foreground: #fafafa;
-  --border: rgba(139, 92, 246, 0.18);
-  --input: rgba(139, 92, 246, 0.15);
-  --ring: #a78bfa;
-  --section-soft: #faf8ff;
-  --header-background: rgba(245, 243, 255, 0.88);
-  --header-foreground: #1e1230;
-  --border-soft: rgba(139, 92, 246, 0.10);
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(139, 92, 246, 0.12);
+  --input: rgba(139, 92, 246, 0.08);
+  --ring: #8b5cf6;
+  --section-soft: #faf9ff;
+  --header-background: rgba(253, 250, 255, 0.82);
+  --header-foreground: #1a1128;
+  --border-soft: rgba(139, 92, 246, 0.06);
 }
 
 @theme inline {
@@ -94,14 +94,15 @@ html {
 body {
   min-height: 100%;
   background-color: var(--background);
-  /* Light mode: layered ambient violet mesh + dot grid */
+  /* Premium Light Mode: Layered Luminous Depth */
   background-image:
-    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(167, 139, 250, 0.28) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 50% at 90% 5%, rgba(196, 181, 253, 0.22) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(139, 92, 246, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 30% 30% at 85% 75%, rgba(168, 85, 247, 0.10) 0%, transparent 55%),
-    radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.12) 1px, transparent 0);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 32px 32px;
+    radial-gradient(circle at 0% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 100% 0%, rgba(196, 181, 253, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(245, 243, 255, 0.5) 0%, transparent 100%),
+    radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 0% 100%, rgba(167, 139, 250, 0.1) 0%, transparent 45%),
+    radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.06) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 40px 40px;
   background-attachment: fixed;
 }
 
@@ -176,11 +177,14 @@ a[href*="spline.design"] {
 
 /* ── Light Mode Premium Utilities ── */
 :root .glass-card {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(139, 92, 246, 0.16);
-  box-shadow: 0 8px 32px rgba(109, 40, 217, 0.08), 0 2px 8px rgba(139, 92, 246, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 12px 48px rgba(109, 40, 217, 0.06),
+    0 4px 12px rgba(139, 92, 246, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
 :root .glow-border {
@@ -192,12 +196,19 @@ a[href*="spline.design"] {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.5), rgba(196, 181, 253, 0.3), rgba(139, 92, 246, 0.5));
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(255, 255, 255, 0.8), rgba(139, 92, 246, 0.4));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
+}
+
+.premium-text-gradient {
+  background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 50%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @keyframes marquee {

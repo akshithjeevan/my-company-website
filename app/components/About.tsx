@@ -87,7 +87,7 @@ export default function About() {
       <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-28">
         {/* Header */}
         <div style={{ paddingBottom: "30px" }} className=" text-center">
-          <h2 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-foreground">
+          <h2 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-foreground premium-text-gradient dark:from-white dark:to-gray-400 dark:bg-clip-text dark:text-transparent">
             What We Do
           </h2>
           <div className="w-24 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-80"></div>
@@ -102,9 +102,9 @@ export default function About() {
           {services.map((service) => (
             <article
               key={service.id}
-              className="group relative rounded-3xl bg-transparent p-px shadow-sm dark:shadow-none transition-transform duration-500 hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none border border-black/5 dark:border-white/5 hover:border-purple-500/30"
+              className="group relative rounded-3xl bg-transparent p-px shadow-sm dark:shadow-none transition-transform duration-500 hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none border border-border/50 dark:border-white/5 hover:border-primary/30"
             >
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[1.4rem] bg-card dark:bg-black text-card-foreground dark:text-white transition-colors duration-300">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-[1.4rem] bg-card dark:bg-black text-card-foreground dark:text-white transition-colors duration-300 glass-card dark:backdrop-filter-none dark:bg-black dark:border-white/5">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
                   <div className="absolute -top-28 -left-28 h-72 w-72 rounded-full bg-purple-600/10 blur-3xl" />
                   <div className="absolute -bottom-28 -right-28 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl" />
@@ -134,10 +134,10 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/20 dark:from-black dark:via-black/40 dark:to-black/20" />
 
                   <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border dark:border-white/10 bg-background/5 dark:bg-white/5 text-lg transition-colors duration-500 group-hover:border-purple-500/40 group-hover:bg-purple-500/20 group-hover:text-purple-600 dark:group-hover:text-purple-100">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border dark:border-white/10 bg-background/5 dark:bg-white/5 text-lg transition-colors duration-500 group-hover:border-primary/40 group-hover:bg-primary/20 group-hover:text-primary dark:group-hover:text-purple-100">
                       {service.icon}
                     </div>
-                    <h3 className="text-lg font-semibold tracking-tight text-foreground dark:text-white transition-colors duration-500 group-hover:text-purple-600 dark:group-hover:text-purple-300">
+                    <h3 className="text-lg font-semibold tracking-tight text-foreground dark:text-white transition-colors duration-500 group-hover:text-primary dark:group-hover:text-purple-300">
                       {service.title}
                     </h3>
                   </div>

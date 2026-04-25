@@ -3,7 +3,7 @@
 import LogoLoop from '../../components/ui/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiFigma, SiGithub, SiJavascript, SiFirebase, SiPrisma, SiHtml5, SiApple } from 'react-icons/si';
 
-const commonClasses = "w-12 h-12 text-muted-foreground dark:text-white/50 transition-all duration-500 group-hover:text-purple-600 dark:group-hover:text-purple-400 drop-shadow-none group-hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] group-hover:scale-110";
+const commonClasses = "w-12 h-12 text-muted-foreground dark:text-white/50 transition-all duration-500 group-hover:text-primary dark:group-hover:text-purple-400 drop-shadow-none group-hover:drop-shadow-[0_0_15px_rgba(109,40,217,0.2)] group-hover:scale-110";
 
 const techLogos = [
   { node: <SiReact className={commonClasses} />, title: "React", href: "https://react.dev" },
@@ -23,7 +23,7 @@ const techLogos = [
 export default function TechStack() {
   return (
     <section className="py-16 bg-background relative z-20 transition-colors duration-300">
-      <h2 className="text-center text-3xl md:text-4xl font-extrabold mb-12 tracking-tight text-foreground dark:text-white">
+      <h2 className="text-center text-3xl md:text-4xl font-extrabold mb-12 tracking-tight text-foreground dark:text-white premium-text-gradient dark:from-white dark:to-gray-400 dark:bg-clip-text dark:text-transparent">
         Technologies We Use
       </h2>
 

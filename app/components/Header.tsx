@@ -7,7 +7,7 @@ import { Rocket } from 'lucide-react';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-header-background backdrop-blur-xl px-6 py-4 text-foreground transition-colors duration-300 shadow-[0_1px_24px_rgba(139,92,246,0.08)] dark:shadow-[0_1px_40px_rgba(109,40,217,0.22),0_1px_0_rgba(139,92,246,0.28)]">
+    <header className="sticky top-0 z-50 border-b border-border bg-header-background backdrop-blur-xl px-6 py-4 text-foreground transition-colors duration-300 shadow-[0_8px_32px_rgba(109,40,217,0.05)] dark:shadow-[0_1px_40px_rgba(109,40,217,0.22),0_1px_0_rgba(139,92,246,0.28)]">
       <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-6">
         <div className="justify-self-start">
           <h1 className="text-lg font-semibold uppercase tracking-[0.18em]">

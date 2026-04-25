@@ -54,7 +54,7 @@ function WhyChooseUs() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="mb-20 text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60 dark:from-white dark:to-white/40">
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-foreground premium-text-gradient dark:from-white dark:to-white/40 dark:bg-clip-text dark:text-transparent">
             Why Businesses Choose Us
           </h2>
           <div className="w-20 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-80"></div>
@@ -69,19 +69,19 @@ function WhyChooseUs() {
             return (
               <article
                 key={benefit.title}
-                className="group relative rounded-[2rem] bg-transparent p-px shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_80px_-20px_rgba(168,85,247,0.15)] border border-black/5 dark:border-white/5 hover:border-purple-500/30"
+                className="group relative rounded-[2rem] bg-transparent p-px shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_80px_-20px_rgba(168,85,247,0.15)] border border-border/50 dark:border-white/5 hover:border-primary/30"
               >
-                <div className="relative h-full flex flex-col overflow-hidden rounded-[1.9rem] bg-card dark:bg-black text-card-foreground dark:text-white p-8 lg:p-10">
+                <div className="relative h-full flex flex-col overflow-hidden rounded-[1.9rem] bg-card dark:bg-black text-card-foreground dark:text-white p-8 lg:p-10 glass-card dark:backdrop-filter-none dark:bg-black dark:border-white/5">
                   {/* Subtle hover gradient inside card */}
                   <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
                     <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-purple-500/10 blur-3xl" />
                   </div>
 
-                  <div className="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-black/[0.03] dark:bg-white/5 border border-black/5 dark:border-white/5 transition-all duration-500 group-hover:border-purple-400/30 group-hover:bg-purple-500/10 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] group-hover:scale-110">
-                    <Icon className="h-8 w-8 text-foreground/40 dark:text-white/50 transition-colors duration-500 group-hover:text-purple-600 dark:group-hover:text-purple-400" strokeWidth={1.5} />
+                  <div className="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-black/[0.03] dark:bg-white/5 border border-border dark:border-white/5 transition-all duration-500 group-hover:border-primary/30 group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_rgba(109,40,217,0.15)] group-hover:scale-110">
+                    <Icon className="h-8 w-8 text-foreground/40 dark:text-white/50 transition-colors duration-500 group-hover:text-primary dark:group-hover:text-purple-400" strokeWidth={1.5} />
                   </div>
                   
-                  <h3 className="text-2xl font-semibold text-foreground/90 dark:text-white/90 mb-4 tracking-tight transition-colors duration-500 group-hover:text-purple-600 dark:group-hover:text-white">
+                  <h3 className="text-2xl font-semibold text-foreground/90 dark:text-white/90 mb-4 tracking-tight transition-colors duration-500 group-hover:text-primary dark:group-hover:text-white">
                     {benefit.title}
                   </h3>
                   

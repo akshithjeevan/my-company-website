@@ -11,22 +11,22 @@ export default function Home() {
       </div>
 
       {/* Spline Canvas Mask for Light Mode to prevent 'foggy' transitions */}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_75%)] dark:bg-none" />
+      <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_85%)] dark:bg-none" />
 
       {/* Cinematic Dark Effects (Vignette & Gradient Fog) identical to evolvxlabs.com */}
       <div className="absolute inset-0 pointer-events-none z-30 dark:shadow-[inset_0_0_200px_rgba(0,0,0,0.8)] dark:bg-gradient-to-t from-black/70 via-transparent to-black/30" />
 
       {/* Animated Hero Text Overlay */}
       <div className="absolute inset-0 z-40 flex flex-col items-center justify-end pb-20 pointer-events-none select-none">
-        <p className="animate-hero-badge text-xs sm:text-sm uppercase tracking-[0.4em] text-purple-600 dark:text-purple-400/90 font-bold mb-4">
+        <p className="animate-hero-badge text-xs sm:text-sm uppercase tracking-[0.4em] text-primary/80 dark:text-purple-400/90 font-bold mb-4">
           Zyntrix Labs
         </p>
         <h1 className="animate-hero-title text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-center leading-tight">
-          <span className="bg-gradient-to-br from-purple-950 to-purple-800 dark:from-white dark:to-gray-400 bg-clip-text text-transparent drop-shadow-sm">
+          <span className="premium-text-gradient dark:from-white dark:to-gray-400 dark:bg-clip-text dark:text-transparent drop-shadow-sm">
             Innovation Starts Here
           </span>
         </h1>
-        <p className="animate-hero-body mt-5 max-w-xl text-center text-base sm:text-lg text-purple-900/60 dark:text-white/40 leading-relaxed px-6">
+        <p className="animate-hero-body mt-5 max-w-xl text-center text-base sm:text-lg text-foreground/60 dark:text-white/40 leading-relaxed px-6">
           Empowering businesses with futuristic digital solutions.
         </p>
       </div>
