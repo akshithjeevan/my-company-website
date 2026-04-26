@@ -156,6 +156,11 @@ export default function WhoWeArePage() {
     <div className="relative isolate">
       <section className="relative overflow-hidden bg-background dark:bg-background text-foreground transition-colors duration-300 isolate">
         <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:48px_48px] md:bg-[size:72px_72px] bg-center [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.4),transparent_85%)] opacity-20 -z-10" />
+        
+        {/* Light Mode Specific Glow (Services style) */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-purple-400/20 blur-[100px] rounded-full pointer-events-none dark:hidden" />
+        
+        {/* Dark Mode Specific Glows */}
         <div className="absolute inset-x-0 top-0 h-96 dark:bg-[radial-gradient(ellipse_at_top_left,rgba(139,92,246,0.25),transparent_50%),radial-gradient(ellipse_at_top_right,rgba(79,70,229,0.18),transparent_45%)] pointer-events-none" />
         <div className="absolute left-8 top-32 h-80 w-80 rounded-full dark:bg-purple-600/[0.28] blur-[140px] pointer-events-none" />
         <div className="absolute right-8 top-24 h-72 w-72 rounded-full dark:bg-indigo-500/[0.20] blur-[120px] pointer-events-none" />

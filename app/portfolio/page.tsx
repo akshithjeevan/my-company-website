@@ -87,7 +87,7 @@ export default function PortfolioPage() {
       {/* ── HERO ── */}
       <section className="relative overflow-hidden pt-36 pb-20 text-center">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[420px] dark:bg-purple-700/10 blur-[120px] rounded-full" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-purple-400/20 dark:bg-purple-700/10 blur-[100px] rounded-full" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6">
@@ -121,8 +121,8 @@ export default function PortfolioPage() {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${isActive
-                    ? "bg-purple-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)]"
-                    : "bg-black/[0.04] dark:bg-white/[0.04] text-muted-foreground/60 dark:text-gray-400 border border-black/5 dark:border-white/[0.08] hover:text-purple-600 dark:hover:text-white hover:border-purple-500/40 hover:bg-purple-500/10"
+                  ? "bg-purple-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)]"
+                  : "bg-black/[0.04] dark:bg-white/[0.04] text-muted-foreground/60 dark:text-gray-400 border border-black/5 dark:border-white/[0.08] hover:text-purple-600 dark:hover:text-white hover:border-purple-500/40 hover:bg-purple-500/10"
                   }`}
               >
                 {category}
@@ -196,7 +196,7 @@ export default function PortfolioPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-purple-600 text-white font-bold text-lg hover:bg-purple-500 hover:shadow-[0_0_50px_rgba(168,85,247,0.45)] transition-all duration-300"
+            className="btn btn-outline hover-shimmer gap-2"
           >
             Start a Conversation
             <ArrowUpRight className="w-5 h-5" />

@@ -11,7 +11,7 @@ export default function Contact() {
           impactful digital solutions and innovative products.
         </p>
 
-        <button className="rounded-full bg-primary px-8 py-3.5 text-white font-semibold transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_8px_32px_rgba(109,40,217,0.25)] hover:scale-105 dark:bg-white dark:text-black dark:hover:bg-purple-500 dark:hover:text-white dark:hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+       <button className="btn btn-outline hover-shimmer">
           Let&apos;s Work Together
         </button>
       </div>

@@ -206,7 +206,14 @@ a[href*="spline.design"] {
 }
 
 .premium-text-gradient {
-  background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 50%, #6d28d9 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .premium-text-gradient {
+  background: linear-gradient(135deg, #030303 0%, #000000 50%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -402,4 +409,85 @@ a[href*="spline.design"] {
 
 .dark .glow-pulse {
   animation: shimmer-pulse 3s ease-in-out infinite;
+}
+
+
+/* codepen button css styling............. */
+/* Base button */
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 9999px; /* njX UI uses full radius by default */
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Outline style */
+.btn-outline {
+  background: transparent;
+  color: #6d28d9; /* Visible purple in light mode */
+  border: 2px solid #6d28d9;
+}
+
+.btn-outline:hover {
+  background: #6d28d9;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(109, 40, 217, 0.3);
+  transform: translateY(-2px);
+}
+
+.dark .btn-outline {
+  color: #c4b5fd; /* Luminous violet in dark mode */
+  border-color: #a855f7;
+}
+
+.dark .btn-outline:hover {
+  background: #a855f7;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+}
+
+/* Shimmer effect */
+.hover-shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+.dark .hover-shimmer::before {
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+/* Animate on hover */
+.hover-shimmer:hover::before {
+  animation: shimmer 0.75s ease forwards;
+}
+
+/* Keyframes */
+@keyframes shimmer {
+  100% {
+    left: 150%;
+  }
 }

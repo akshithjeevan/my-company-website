@@ -284,96 +284,109 @@ export default function CarrierPage() {
             </h2>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-2 items-start">
+          <div className="grid gap-8 lg:grid-cols-2 items-start">
             {openings.map((role) => {
               const isOpen = expandedRole === role.title;
               return (
                 <article
                   key={role.title}
-                  className={`group relative rounded-[1.75rem] border glass-card dark:bg-[rgba(14,9,28,0.65)] p-7 transition-all duration-500 hover:-translate-y-1 dark:hover:translate-y-0 hover:shadow-lg dark:hover:shadow-none ${isOpen
-                    ? "border-purple-400 dark:border-purple-500/50 bg-purple-50 dark:bg-purple-500/[0.05] shadow-[0_0_50px_rgba(168,85,247,0.15)] dark:shadow-[0_0_50px_rgba(168,85,247,0.1)]"
-                    : "border-purple-200/60 dark:border-purple-500/22 hover:border-purple-400/60 dark:hover:border-purple-500/30 hover:bg-purple-50/50 dark:hover:bg-white/[0.03] shadow-sm dark:shadow-none"
+                  className={`group relative rounded-[2.5rem] border p-8 sm:p-10 transition-all duration-500 overflow-hidden ${isOpen
+                    ? "border-purple-500/50 bg-white/95 dark:bg-[rgba(20,12,45,0.85)] shadow-[0_10px_40px_rgba(139,92,246,0.15)] dark:shadow-[0_0_50px_rgba(168,85,247,0.2)]"
+                    : "border-border dark:border-purple-500/25 bg-white/80 dark:bg-[rgba(14,9,28,0.65)] hover:border-purple-500/50 hover:bg-white dark:hover:bg-[rgba(20,12,45,0.90)] hover:-translate-y-2 hover:shadow-[0_8px_32px_rgba(139,92,246,0.15)] dark:hover:shadow-[0_0_50px_rgba(109,40,217,0.32)] shadow-sm dark:shadow-none"
                     }`}
                 >
-                  <div className="relative flex h-full flex-col overflow-hidden rounded-[1.4rem]">
-                    {/* Top glow bar */}
-                    <div className={`absolute top-0 left-0 right-0 h-[2px] dark:h-px bg-gradient-to-r from-transparent via-purple-500/80 dark:via-purple-500/60 to-transparent transition-opacity duration-500 rounded-t-[1.75rem] ${isOpen ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
+                  {/* Dynamic Cyber-Grid & Ambient Orbs Background (Hover) */}
+                  <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden rounded-[2.5rem]">
+                    {/* Grid Pattern */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#8b5cf61a_1px,transparent_1px),linear-gradient(to_bottom,#8b5cf61a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)] dark:bg-[linear-gradient(to_right,#a855f715_1px,transparent_1px),linear-gradient(to_bottom,#a855f715_1px,transparent_1px)]" />
+                    {/* Glowing Orbs */}
+                    <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-purple-500/20 blur-3xl group-hover:animate-pulse" />
+                    <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-indigo-500/20 blur-3xl group-hover:animate-[pulse_3s_ease-in-out_infinite]" />
+                  </div>
 
+                  <div className="relative flex h-full flex-col">
                     {/* Header row */}
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-gray-700 dark:text-gray-500 mb-5">
-                      <span className={`rounded-full border px-3 py-1 transition-colors duration-300 ${isOpen ? "border-purple-500/40 text-gray-900 dark:text-purple-300 bg-purple-500/10" : "border-purple-200 dark:border-white/10 bg-purple-50 dark:bg-white/[0.04] text-gray-900 dark:text-gray-400"
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-gray-700 dark:text-gray-500 mb-6">
+                      <span className={`rounded-full border px-4 py-1.5 font-bold tracking-wide transition-colors duration-300 ${isOpen ? "border-purple-500/50 text-purple-700 dark:text-purple-300 bg-purple-500/10" : "border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.04] text-gray-900 dark:text-gray-400 group-hover:border-purple-300 dark:group-hover:border-purple-500/30 group-hover:text-purple-600 dark:group-hover:text-purple-300"
                         }`}>
                         {role.type}
                       </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <MapPin className="h-4 w-4" />
+                      <span className="inline-flex items-center gap-1.5 font-medium">
+                        <MapPin className="h-4 w-4 text-purple-500" />
                         {role.location}
                       </span>
                     </div>
 
-                    <h3 className={`text-2xl font-bold transition-colors duration-300 ${isOpen ? "text-gray-900 dark:text-purple-200" : "text-black dark:text-white group-hover:text-gray-900 dark:group-hover:text-purple-100"
+                    <h3 className={`text-2xl sm:text-3xl font-extrabold tracking-tight transition-colors duration-300 ${isOpen ? "premium-text-gradient dark:text-white" : "text-gray-900 dark:text-white group-hover:premium-text-gradient"
                       }`}>{role.title}</h3>
-                    <p className="mt-3 text-base leading-7 text-gray-800 dark:text-gray-400">{role.description}</p>
+                    <p className="mt-4 text-base leading-relaxed text-gray-700 dark:text-gray-400">{role.description}</p>
 
                     {/* Toggle button */}
                     <button
                       onClick={() => toggle(role.title)}
-                      className={`mt-5 inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${isOpen ? "text-gray-900 dark:text-purple-400" : "text-gray-800 dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-purple-400"
+                      className={`mt-6 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-semibold transition-all duration-300 w-fit ${isOpen ? "border-purple-500/50 bg-purple-500/10 text-purple-700 dark:text-purple-300" : "border-gray-200 dark:border-white/10 bg-transparent text-gray-700 dark:text-gray-400 group-hover:border-purple-500/30 group-hover:text-purple-600 dark:group-hover:text-purple-300 group-hover:bg-purple-50 dark:group-hover:bg-purple-500/10"
                         }`}
                     >
-                      {isOpen ? "Collapse" : "View Full Details"}
-                      <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                      {isOpen ? "Close Details" : "View Full Details"}
+                      <ChevronDown className={`h-4 w-4 transition-transform duration-500 ${isOpen ? "rotate-180" : ""}`} />
                     </button>
 
                     {/* Expandable panel */}
-                    {isOpen && (
-                      <div className="mt-6 space-y-5 border-t border-purple-200 dark:border-white/[0.07] pt-6">
-
+                    <div
+                      className={`grid transition-all duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100 mt-8 pt-8 border-t border-purple-200 dark:border-white/[0.07]" : "grid-rows-[0fr] opacity-0 mt-0 pt-0 border-t border-transparent"
+                        }`}
+                    >
+                      <div className="overflow-hidden space-y-8">
+                        {/* Responsibilities */}
                         <div>
-                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-900 dark:text-purple-500 mb-3 transition-colors duration-300">Responsibilities</p>
-                          <ul className="space-y-2">
+                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-purple-600 dark:text-purple-500 mb-4">Responsibilities</p>
+                          <ul className="space-y-3">
                             {role.responsibilities.map((r) => (
-                              <li key={r} className="flex items-start gap-2 text-sm leading-6 text-black/80 dark:text-gray-300">
-                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600 dark:bg-purple-500" />
+                              <li key={r} className="flex items-start gap-3 text-sm leading-relaxed text-gray-800 dark:text-gray-300">
+                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
                                 {r}
                               </li>
                             ))}
                           </ul>
                         </div>
 
+                        {/* Requirements */}
                         <div>
-                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-900 dark:text-purple-500 mb-3 transition-colors duration-300">Requirements</p>
-                          <ul className="space-y-2">
+                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-purple-600 dark:text-purple-500 mb-4">Requirements</p>
+                          <ul className="space-y-3">
                             {role.requirements.map((r) => (
-                              <li key={r} className="flex items-start gap-2 text-sm leading-6 text-black/80 dark:text-gray-300">
-                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600 dark:bg-purple-500" />
+                              <li key={r} className="flex items-start gap-3 text-sm leading-relaxed text-gray-800 dark:text-gray-300">
+                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 shadow-[0_0_10px_rgba(168,85,247,0.8)]" />
                                 {r}
                               </li>
                             ))}
                           </ul>
                         </div>
 
+                        {/* Nice to Have */}
                         <div>
-                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-600 mb-3 transition-colors duration-300">Nice to Have</p>
-                          <ul className="space-y-2">
+                          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-500 mb-4">Nice to Have</p>
+                          <ul className="space-y-3">
                             {role.niceToHave.map((r) => (
-                              <li key={r} className="flex items-start gap-2 text-sm leading-6 text-gray-800 dark:text-gray-500">
-                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-900/30 dark:bg-gray-600" />
+                              <li key={r} className="flex items-start gap-3 text-sm leading-relaxed text-gray-600 dark:text-gray-500">
+                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400 dark:bg-gray-700" />
                                 {r}
                               </li>
                             ))}
                           </ul>
                         </div>
 
-                        <Link
-                          href={`mailto:info@Zyntrix.co.in?subject=Application — ${encodeURIComponent(role.title)}`}
-                          className="mt-2 inline-flex items-center gap-2 rounded-xl bg-purple-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-purple-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all duration-300"
-                        >
-                          Apply for this role
-                          <ArrowRight className="h-4 w-4" />
-                        </Link>
+                        <div className="pt-4 pb-2">
+                          <Link
+                            href={`mailto:info@Zyntrix.co.in?subject=Application — ${encodeURIComponent(role.title)}`}
+                            className="btn btn-outline hover-shimmer gap-2 w-full sm:w-auto"
+                          >
+                            Apply for this role
+                            <ArrowRight className="h-4 w-4" />
+                          </Link>
+                        </div>
                       </div>
-                    )}
+                    </div>
                   </div>
                 </article>
               );
