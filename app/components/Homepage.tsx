@@ -1,37 +1,29 @@
-import Spline from '@splinetool/react-spline/next';
+"use client";
+
+import dynamic from "next/dynamic";
+import { useTheme } from "@/components/theme-provider";
+import { useEffect, useState } from "react";
+
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+});
 
 export default function Home() {
-  return (
-    <main className="h-screen w-full relative overflow-hidden bg-background">
-      {/* Render canvas taller than the screen so the Spline watermark is pushed out of bounds and hidden */}
-      <div className="absolute top-0 left-0 right-0 h-[calc(100vh+80px)] z-0 pointer-events-auto">
-        <Spline
-          scene="https://prod.spline.design/7xtgS97MudeIx3Vs/scene.splinecode"
-        />
-      </div>
+  const { resolvedTheme } = useTheme();
 
-      {/* Spline Canvas Mask for Light Mode to prevent 'foggy' transitions */}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_85%)] dark:bg-none" />
+  const [mounted, setMounted] = useState(false);
 
-      {/* Cinematic Dark Effects (Vignette & Gradient Fog) identical to evolvxlabs.com */}
-      <div className="absolute inset-0 pointer-events-none z-30 dark:shadow-[inset_0_0_200px_rgba(0,0,0,0.8)] dark:bg-gradient-to-t from-black/70 via-transparent to-black/30" />
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-      {/* Animated Hero Text Overlay */}
-      <div className="absolute inset-0 z-40 flex flex-col items-center justify-end pb-20 pointer-events-none select-none">
-        <p className="animate-hero-badge text-xs sm:text-sm uppercase tracking-[0.4em] text-primary/80 dark:text-purple-400/90 font-bold mb-4">
-          Zyntrix Labs
-        </p>
-        <h1 className="animate-hero-title text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-center leading-tight">
-          <span className="premium-text-gradient dark:from-white dark:to-gray-400 dark:bg-clip-text dark:text-transparent drop-shadow-sm">
-            Innovation Starts Here
-          </span>
-        </h1>
-        <p className="animate-hero-body mt-5 max-w-xl text-center text-base sm:text-lg text-foreground/60 dark:text-white/40 leading-relaxed px-6">
-          Empowering businesses with futuristic digital solutions.
-        </p>
-      </div>
+  // 🚨 CRITICAL: wait until theme is ready
+  if (!mounted || !resolvedTheme) return null;
 
+  const sceneUrl =
+    resolvedTheme === "dark"
+      ? "https://prod.spline.design/7xtgS97MudeIx3Vs/scene.splinecode"
+      : "https://prod.spline.design/OAWq1X6z8QgDIJAj/scene.splinecode";
 
-    </main>
-  );
+  return <Spline key={resolvedTheme} scene={sceneUrl} />;
 }
