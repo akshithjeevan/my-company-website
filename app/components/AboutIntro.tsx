@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge"
 
 function AboutIntro() {
     return (
-        <section className="relative w-full py-24 md:py-32 bg-background overflow-hidden flex items-center justify-center transition-colors duration-300">
+        <section className="relative w-full pt-24 md:pt-32 pb-20 bg-background overflow-hidden flex items-center justify-center transition-colors duration-300">
             {/* Subtle Purple Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[500px] dark:bg-purple-600/5 blur-[150px] rounded-[100%] pointer-events-none" />
 

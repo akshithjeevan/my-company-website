@@ -1,83 +1,210 @@
+"use client";
+
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { 
+  Monitor, 
+  Smartphone, 
+  ShoppingCart, 
+  Bot, 
+  Cloud, 
+  Palette, 
+  BarChart3, 
+  PenTool, 
+  Cpu,
+  ArrowRight 
+} from 'lucide-react';
 import LottieAnimation from '../../components/ui/Lottiefiles';
+
+function ServiceCard({ service }: { service: any }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const Icon = service.icon;
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isHovered) {
+        videoRef.current.play().catch(err => console.log("Video play failed:", err));
+      } else {
+        videoRef.current.pause();
+        videoRef.current.currentTime = 0;
+      }
+    }
+  }, [isHovered]);
+
+  return (
+    <article
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="group relative rounded-[2rem] bg-transparent p-px shadow-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.01] border border-border/50 dark:border-white/10 glow-border overflow-hidden"
+    >
+      <div className="relative flex h-full flex-col overflow-hidden rounded-[1.9rem] bg-card dark:bg-[#05030f] text-card-foreground dark:text-white transition-colors duration-300 glass-card">
+        {/* Interactive Spotlight Glows */}
+        <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
+          <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-primary/20 blur-[120px]" />
+          <div className="absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-purple-500/20 blur-[120px]" />
+        </div>
+
+        {/* Media Container */}
+        <div className="relative aspect-video overflow-hidden bg-muted/10 dark:bg-black/40">
+          {service.lottieSrc ? (
+            <div className="absolute inset-0 h-full w-full transition duration-1000 ease-out group-hover:scale-110 dark:opacity-90 dark:mix-blend-screen">
+                <LottieAnimation src={service.lottieSrc} bgInfo="transparent" autoplay={isHovered} />
+            </div>
+          ) : service.video ? (
+            <video
+              ref={videoRef}
+              src={service.video}
+              poster={service.poster}
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 h-full w-full object-cover opacity-60 dark:mix-blend-screen transition duration-1000 ease-out group-hover:scale-110 group-hover:opacity-90"
+            />
+          ) : (
+            <div className="absolute inset-0 h-full w-full transition duration-1000 ease-out group-hover:scale-110 opacity-80 dark:mix-blend-screen">
+                <LottieAnimation autoplay={isHovered} />
+            </div>
+          )}
+          
+          {/* Glassy Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent dark:from-[#05030f] dark:via-transparent dark:to-transparent" />
+          <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.1),transparent_70%)]" />
+        </div>
+
+        {/* Content Area */}
+        <div className="flex flex-1 flex-col p-6 pt-5">
+          {/* Title Section - Below video but stylized */}
+          <div className="flex items-center gap-3 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/20 dark:border-white/10 bg-primary/5 dark:bg-white/5 text-primary transition-all duration-500 group-hover:border-primary/50 group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-6">
+              <Icon size={20} strokeWidth={2.5} />
+            </div>
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-foreground dark:text-white group-hover:text-primary transition-colors duration-500">
+              {service.title}
+            </h3>
+          </div>
+
+          <p className="text-sm font-light leading-relaxed text-muted-foreground dark:text-gray-400 line-clamp-2 transition-colors duration-500 group-hover:text-foreground dark:group-hover:text-gray-200">
+            {service.description}
+          </p>
+
+          <div className="mt-auto pt-5 flex items-center justify-between">
+            <Link
+              href={`/services#${service.slug}`}
+              className="group/btn relative overflow-hidden flex items-center gap-2 rounded-full border border-primary/20 dark:border-white/10 bg-primary/5 dark:bg-white/5 pl-4 pr-10 py-2 text-[10px] font-bold tracking-widest uppercase text-primary dark:text-white/70 transition-all duration-500 hover:border-primary/50 hover:bg-primary/20 hover:text-primary dark:hover:text-white"
+            >
+              Explore
+              <div className="absolute right-1 top-1 bottom-1 w-8 flex items-center justify-center rounded-full bg-primary/10 dark:bg-white/10 group-hover/btn:bg-primary group-hover/btn:text-white transition-all duration-500">
+                <ArrowRight className="h-3 w-3 transition-transform duration-500 group-hover/btn:translate-x-0.5" />
+              </div>
+            </Link>
+            
+            <div className="h-1 w-8 rounded-full bg-primary/20 dark:bg-white/5 overflow-hidden">
+                <div className="h-full w-0 bg-primary group-hover:w-full transition-all duration-1000 ease-out" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function About() {
   const services = [
     {
       id: 1,
-      icon: "💻",
+      icon: Monitor,
       title: "Web Development",
       slug: "web-development",
-      description: "High-performance websites and applications using modern frameworks and best practices.",
+      description: "High-performance, scalable websites and progressive web apps built with the latest technologies.",
       video: "/videos/abstract-cyan-loop-1.mp4",
       poster: "/videos/about_cyan_1.png",
       lottieSrc: "https://lottie.host/0720ec64-6eb5-46f2-bd10-ba266a2efa5a/Hehr4ETsVQ.lottie"
     },
     {
       id: 2,
-      icon: "🤖",
+      icon: Smartphone,
       title: "App Development",
       slug: "app-development",
-      description: "Intelligent systems that automate and enhance business workflows with cutting-edge technology.",
+      description: "Native and cross-platform mobile applications that deliver premium performance and user experience.",
       video: "/videos/abstract-cyan-loop-2.mp4",
       poster: "/videos/about_cyan_2.png",
-      lottieSrc: null
+      lottieSrc: "https://lottie.host/6ddc4d0c-b1f1-425f-a5ae-6240130e05ea/0ZHuI1NHxK.lottie"
     },
     {
       id: 3,
-      icon: "🎨",
-      title: "E-Commerce Platform",
-      slug: "ecommerce-platform",
-      description: "Clean, user-focused interfaces that deliver exceptional experiences and drive engagement.",
+      icon: ShoppingCart,
+      title: "E-Commerce",
+      slug: "ecommerce",
+      description: "Secure and optimized online shopping platforms designed to maximize conversions and sales.",
       video: "/videos/abstract-cyan-loop-3.mp4",
       poster: "/videos/about_cyan_3.png",
       lottieSrc: "https://lottie.host/26eae896-f94f-4e43-b7ff-d6ad5d9ce4b9/BDNL1RZHds.lottie"
     },
     {
       id: 4,
-      icon: "💻",
-      title: "AI Chatbot Platform",
-      slug: "ai-chatbot",
-      description: "High-performance websites and applications using modern frameworks and best practices.",
+      icon: Bot,
+      title: "AI & Chatbots",
+      slug: "ai-chatbots",
+      description: "Intelligent conversational agents and machine learning models that automate business workflows.",
       video: "/videos/abstract-cyan-loop-4.mp4",
       poster: "/videos/about_cyan_4.png",
       lottieSrc: "https://lottie.host/78c243b8-411f-480b-a19c-910945ff16ea/2p6s3dYyue.lottie"
     },
     {
       id: 5,
-      icon: "🤖",
+      icon: Cloud,
       title: "SaaS Development",
       slug: "saas-development",
-      description: "Intelligent systems that automate and enhance business workflows with cutting-edge technology.",
+      description: "Cloud-native software solutions built for multi-tenancy, security, and high scalability.",
       video: "/videos/abstract-cyan-loop-1.mp4",
       poster: "/videos/about_cyan_1.png",
       lottieSrc: "https://lottie.host/017797d2-3bae-4a47-899a-4b036e425481/CneBPF9W6t.lottie"
     },
     {
       id: 6,
-      icon: "🎨",
+      icon: Palette,
       title: "UI/UX Design",
       slug: "ui-ux-design",
-      description: "Clean, user-focused interfaces that deliver exceptional experiences and drive engagement.",
+      description: "Crafting intuitive digital interfaces that combine stunning aesthetics with seamless usability.",
       video: "/videos/abstract-cyan-loop-2.mp4",
       poster: "/videos/about_cyan_2.png",
       lottieSrc: "https://lottie.host/0e836a88-726d-4402-8295-226d28f3f9c4/vGeCWuvkQ1.lottie"
     },
     {
       id: 7,
-      icon: "🎨",
+      icon: BarChart3,
       title: "Digital Marketing",
       slug: "digital-marketing",
-      description: "Clean, user-focused interfaces that deliver exceptional experiences and drive engagement.",
+      description: "Data-driven growth strategies and marketing automation to amplify your brand's digital presence.",
       video: "/videos/abstract-cyan-loop-3.mp4",
       poster: "/videos/about_cyan_3.png",
       lottieSrc: "https://lottie.host/dd04a975-b7a5-400b-a5fd-5a6b51e0a830/I3gycnioEA.lottie"
+    },
+    {
+      id: 8,
+      icon: PenTool,
+      title: "Logo & Branding",
+      slug: "logo-branding",
+      description: "Creating unique visual identities and memorable brand stories that leave a lasting impression.",
+      video: "/videos/abstract-cyan-loop-1.mp4",
+      poster: "/videos/about_cyan_1.png",
+      lottieSrc: "https://lottie.host/e978978f-26ea-4f93-904b-6f6933597cd4/SjygM4l49W.lottie"
+    },
+    {
+      id: 9,
+      icon: Cpu,
+      title: "IoT Solutions",
+      slug: "iot-solutions",
+      description: "Smart connected systems and embedded software to monitor and control industrial environments.",
+      video: "/videos/abstract-cyan-loop-2.mp4",
+      poster: "/videos/about_cyan_2.png",
+      lottieSrc: "https://lottie.host/3740aa27-e3fe-4490-ac5f-9ace3c517963/HLyJLHmv7Y.lottie"
     }
   ]
 
   return (
-    <section className="relative w-full pt-24 pb-24 bg-background text-foreground transition-colors duration-300 overflow-hidden">
+    <section className="relative w-full pt-10 pb-24 bg-background text-foreground transition-colors duration-300 overflow-hidden">
 
       {/* Subtle Background Grid (Dark Only) */}
       <div className="absolute inset-0 dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-60" />
@@ -100,66 +227,7 @@ export default function About() {
         {/* Services Grid */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {services.map((service) => (
-            <article
-              key={service.id}
-              className="group relative rounded-3xl bg-transparent p-px shadow-sm dark:shadow-none transition-transform duration-500 hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none border border-border/50 dark:border-white/5 hover:border-primary/30"
-            >
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[1.4rem] bg-card dark:bg-black text-card-foreground dark:text-white transition-colors duration-300 glass-card dark:backdrop-filter-none dark:bg-black dark:border-white/5">
-                <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
-                  <div className="absolute -top-28 -left-28 h-72 w-72 rounded-full bg-purple-600/10 blur-3xl" />
-                  <div className="absolute -bottom-28 -right-28 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl" />
-                </div>
-
-                <div className="relative aspect-[16/9] overflow-hidden bg-muted/20 dark:bg-black/40">
-                  {service.lottieSrc ? (
-                    <div className="absolute inset-0 h-full w-full transition duration-700 ease-out group-hover:scale-[1.05] dark:opacity-80 dark:mix-blend-screen dark:bg-white">
-                        <LottieAnimation src={service.lottieSrc} bgInfo="transparent" />
-                    </div>
-                  ) : service.slug === "app-development" ? (
-                    <div className="absolute inset-0 h-full w-full transition duration-700 ease-out group-hover:scale-[1.05] opacity-80 dark:mix-blend-screen">
-                        <LottieAnimation />
-                    </div>
-                  ) : (
-                    <video
-                      src={service.video}
-                      poster={service.poster}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="absolute inset-0 h-full w-full object-cover opacity-55 dark:mix-blend-screen transition duration-700 ease-out group-hover:scale-[1.05] group-hover:opacity-95 motion-reduce:transition-none"
-                    />
-                  )}
-                  <div className="absolute inset-0 dark:bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.1),transparent_40%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/20 dark:from-black dark:via-black/40 dark:to-black/20" />
-
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border dark:border-white/10 bg-background/5 dark:bg-white/5 text-lg transition-colors duration-500 group-hover:border-primary/40 group-hover:bg-primary/20 group-hover:text-primary dark:group-hover:text-purple-100">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-lg font-semibold tracking-tight text-foreground dark:text-white transition-colors duration-500 group-hover:text-primary dark:group-hover:text-purple-300">
-                      {service.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="flex flex-1 flex-col p-5">
-                  <p className="text-sm font-light leading-relaxed text-muted-foreground dark:text-white/65 transition-colors duration-500 group-hover:text-foreground dark:group-hover:text-white/75">
-                    {service.description}
-                  </p>
-
-                  <div className="mt-5">
-                    <Link
-                      href={`/services#${service.slug}`}
-                      className="inline-flex items-center gap-2 rounded-xl border border-black/10 dark:border-white/5 bg-transparent px-3 py-2 text-xs font-semibold text-muted-foreground dark:text-white/50 transition-all duration-500 hover:border-purple-500/40 hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-200 group-hover:text-foreground dark:group-hover:text-white/80"
-                    >
-                      Learn more
-                      <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <ServiceCard key={service.id} service={service} />
           ))}
         </div>
       </div>

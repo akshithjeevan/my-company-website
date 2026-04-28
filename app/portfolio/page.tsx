@@ -195,7 +195,7 @@ export default function PortfolioPage() {
             Have an idea? We&apos;ll turn it into a powerful digital product that stands out.
           </p>
           <Link
-            href="/contact"
+            href="/ContactUs#connect"
             className="btn btn-outline hover-shimmer gap-2"
           >
             Start a Conversation

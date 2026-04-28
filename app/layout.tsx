@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import WhatsAppButton from "./components/WhatsAppButton";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "@/components/theme-provider";
+import Preloader from "./components/Preloader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="system">
+          <Preloader />
           <Header />
           <main className="flex-1">{children}</main>
           <WhatsAppButton />

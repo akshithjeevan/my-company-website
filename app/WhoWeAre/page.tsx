@@ -551,7 +551,7 @@ export default function WhoWeArePage() {
             </div>
 
             <div className="mt-8 flex flex-col gap-5 sm:flex-row relative z-10">
-              <Link href="mailto:info@Zyntrix.co.in">
+              <Link href="/ContactUs#connect">
                 <StarBorder
                   as="div"
                   color="rgba(168,85,247,1)"

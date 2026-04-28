@@ -65,7 +65,7 @@ export default function ContactUsPage() {
       </section>
 
       {/* ── PREFERRED WAY TO CONNECT ── */}
-      <section className="py-20 relative">
+      <section id="connect" className="py-20 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-purple-950 dark:text-white sm:text-4xl mb-4">
@@ -217,7 +217,7 @@ export default function ContactUsPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="#"
+              href="#connect"
               className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-8 py-4 text-base font-bold text-white transition hover:bg-purple-500 hover:shadow-[0_0_50px_rgba(168,85,247,0.45)]"
             >
               Start Your Project

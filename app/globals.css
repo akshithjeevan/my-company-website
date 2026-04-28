@@ -206,14 +206,19 @@ a[href*="spline.design"] {
 }
 
 .premium-text-gradient {
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #06b6d4 100%);
+   background: linear-gradient(135deg, #000000 0%, #1f2937 50%, #4b5563 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .dark .premium-text-gradient {
-  background: linear-gradient(135deg, #030303 0%, #000000 50%, #ffffff 100%);
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #d1d5db 50%,
+    #9ca3af 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

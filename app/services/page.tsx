@@ -70,6 +70,24 @@ const services = [
       "SEO, social media and marketing strategies that grow traffic, leads and revenue.",
     highlights: ["SEO & SEM", "Social Media", "Growth Strategy"],
   },
+  {
+    title: "Logo & Branding",
+    id: "logo-branding",
+    tag: "08",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
+    description:
+      "Creating unique visual identities and memorable brand stories that leave a lasting impression and resonate with your audience.",
+    highlights: ["Brand Identity", "Logo Design", "Visual Storytelling"],
+  },
+  {
+    title: "IoT Solutions",
+    id: "iot-solutions",
+    tag: "09",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    description:
+      "Smart connected systems and embedded software solutions that monitor, control, and optimize industrial and consumer environments.",
+    highlights: ["Smart Connectivity", "Embedded Systems", "Real-time Monitoring"],
+  },
 ]
 
 export default function ServicesPage() {
@@ -149,7 +167,7 @@ export default function ServicesPage() {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href="/ContactUs#connect"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold text-sm hover:bg-purple-500 hover:shadow-[0_10px_30px_rgba(168,85,247,0.3)] dark:hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300 hover:-translate-y-1 dark:hover:translate-y-0"
                 >
                   Get Started
@@ -195,7 +213,7 @@ export default function ServicesPage() {
             Tell us your idea and we&apos;ll turn it into a powerful digital product that drives results.
           </p>
           <Link
-            href="/contact"
+            href="/ContactUs#connect"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-purple-600 text-white font-bold text-lg hover:bg-purple-500 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-300"
           >
             Start Your Project
