@@ -2,17 +2,17 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  Monitor, 
-  Smartphone, 
-  ShoppingCart, 
-  Bot, 
-  Cloud, 
-  Palette, 
-  BarChart3, 
-  PenTool, 
+import {
+  Monitor,
+  Smartphone,
+  ShoppingCart,
+  Bot,
+  Cloud,
+  Palette,
+  BarChart3,
+  PenTool,
   Cpu,
-  ArrowRight 
+  ArrowRight
 } from 'lucide-react';
 import LottieAnimation from '../../components/ui/Lottiefiles';
 
@@ -21,16 +21,6 @@ function ServiceCard({ service }: { service: any }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const Icon = service.icon;
 
-  useEffect(() => {
-    if (videoRef.current) {
-      if (isHovered) {
-        videoRef.current.play().catch(err => console.log("Video play failed:", err));
-      } else {
-        videoRef.current.pause();
-        videoRef.current.currentTime = 0;
-      }
-    }
-  }, [isHovered]);
 
   return (
     <article
@@ -49,7 +39,7 @@ function ServiceCard({ service }: { service: any }) {
         <div className="relative aspect-video overflow-hidden bg-muted/10 dark:bg-black/40">
           {service.lottieSrc ? (
             <div className="absolute inset-0 h-full w-full transition duration-1000 ease-out group-hover:scale-110 dark:opacity-90 dark:mix-blend-screen">
-                <LottieAnimation src={service.lottieSrc} bgInfo="transparent" autoplay={isHovered} />
+              <LottieAnimation src={service.lottieSrc} bgInfo="transparent" />
             </div>
           ) : service.video ? (
             <video
@@ -58,15 +48,16 @@ function ServiceCard({ service }: { service: any }) {
               poster={service.poster}
               loop
               muted
+              autoPlay
               playsInline
               className="absolute inset-0 h-full w-full object-cover opacity-60 dark:mix-blend-screen transition duration-1000 ease-out group-hover:scale-110 group-hover:opacity-90"
             />
           ) : (
             <div className="absolute inset-0 h-full w-full transition duration-1000 ease-out group-hover:scale-110 opacity-80 dark:mix-blend-screen">
-                <LottieAnimation autoplay={isHovered} />
+              <LottieAnimation />
             </div>
           )}
-          
+
           {/* Glassy Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent dark:from-[#05030f] dark:via-transparent dark:to-transparent" />
           <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.1),transparent_70%)]" />
@@ -98,9 +89,9 @@ function ServiceCard({ service }: { service: any }) {
                 <ArrowRight className="h-3 w-3 transition-transform duration-500 group-hover/btn:translate-x-0.5" />
               </div>
             </Link>
-            
+
             <div className="h-1 w-8 rounded-full bg-primary/20 dark:bg-white/5 overflow-hidden">
-                <div className="h-full w-0 bg-primary group-hover:w-full transition-all duration-1000 ease-out" />
+              <div className="h-full w-0 bg-primary group-hover:w-full transition-all duration-1000 ease-out" />
             </div>
           </div>
         </div>
@@ -135,7 +126,7 @@ export default function About() {
       id: 3,
       icon: ShoppingCart,
       title: "E-Commerce",
-      slug: "ecommerce",
+      slug: "ecommerce-platform",
       description: "Secure and optimized online shopping platforms designed to maximize conversions and sales.",
       video: "/videos/abstract-cyan-loop-3.mp4",
       poster: "/videos/about_cyan_3.png",
@@ -145,7 +136,7 @@ export default function About() {
       id: 4,
       icon: Bot,
       title: "AI & Chatbots",
-      slug: "ai-chatbots",
+      slug: "ai-chatbot",
       description: "Intelligent conversational agents and machine learning models that automate business workflows.",
       video: "/videos/abstract-cyan-loop-4.mp4",
       poster: "/videos/about_cyan_4.png",
