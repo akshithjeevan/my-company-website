@@ -156,10 +156,10 @@ export default function WhoWeArePage() {
     <div className="relative isolate">
       <section className="relative overflow-hidden bg-background dark:bg-background text-foreground transition-colors duration-300 isolate">
         <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:48px_48px] md:bg-[size:72px_72px] bg-center [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.4),transparent_85%)] opacity-20 -z-10" />
-        
+
         {/* Light Mode Specific Glow (Services style) */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-purple-400/20 blur-[100px] rounded-full pointer-events-none dark:hidden" />
-        
+
         {/* Dark Mode Specific Glows */}
         <div className="absolute inset-x-0 top-0 h-96 dark:bg-[radial-gradient(ellipse_at_top_left,rgba(139,92,246,0.25),transparent_50%),radial-gradient(ellipse_at_top_right,rgba(79,70,229,0.18),transparent_45%)] pointer-events-none" />
         <div className="absolute left-8 top-32 h-80 w-80 rounded-full dark:bg-purple-600/[0.28] blur-[140px] pointer-events-none" />
@@ -375,7 +375,7 @@ export default function WhoWeArePage() {
 
                   {/* Inner Card Background */}
                   <div className="relative z-10 flex h-full flex-col rounded-[calc(2.5rem-2px)] bg-white/95 dark:bg-[#060312]/95 p-10 overflow-hidden backdrop-blur-3xl">
-                    
+
                     {/* Inner Ambient Glow on Hover */}
                     <div className="absolute -inset-x-20 -bottom-20 z-0 h-[300px] bg-gradient-to-t from-purple-600/20 via-indigo-600/10 to-transparent opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100 pointer-events-none" />
 
@@ -389,7 +389,7 @@ export default function WhoWeArePage() {
                           {item.number}
                         </span>
                       </div>
-                      
+
                       <div className="relative flex h-20 w-20 items-center justify-center rounded-[2rem] bg-gradient-to-br from-purple-50 to-white dark:from-purple-900/40 dark:to-[#080414] border border-purple-200/50 dark:border-white/10 shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
                         <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-purple-600 to-indigo-600 opacity-0 transition-opacity duration-500 group-hover:opacity-10 pointer-events-none" />
                         <Icon className="h-8 w-8 text-purple-600 dark:text-purple-400 transition-transform duration-500 group-hover:scale-110" />
@@ -400,7 +400,7 @@ export default function WhoWeArePage() {
                     <h3 className="relative z-10 mt-10 text-3xl font-extrabold tracking-tight text-foreground dark:text-white transition-colors duration-300">
                       {item.title}
                     </h3>
-                    
+
                     <p className="relative z-10 mt-4 text-lg leading-relaxed text-muted-foreground dark:text-gray-400 group-hover:text-foreground dark:group-hover:text-gray-200 transition-colors duration-300 flex-grow">
                       {item.description}
                     </p>
@@ -551,7 +551,7 @@ export default function WhoWeArePage() {
             </div>
 
             <div className="mt-8 flex flex-col gap-5 sm:flex-row relative z-10">
-              <Link href="/ContactUs#connect">
+              <Link href="/ContactUs">
                 <StarBorder
                   as="div"
                   color="rgba(168,85,247,1)"

@@ -167,7 +167,7 @@ export default function ServicesPage() {
                 </div>
 
                 <Link
-                  href="/ContactUs#connect"
+                  href="/ContactUs"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold text-sm hover:bg-purple-500 hover:shadow-[0_10px_30px_rgba(168,85,247,0.3)] dark:hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300 hover:-translate-y-1 dark:hover:translate-y-0"
                 >
                   Get Started
@@ -213,7 +213,7 @@ export default function ServicesPage() {
             Tell us your idea and we&apos;ll turn it into a powerful digital product that drives results.
           </p>
           <Link
-            href="/ContactUs#connect"
+            href="/ContactUs"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-purple-600 text-white font-bold text-lg hover:bg-purple-500 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] transition-all duration-300"
           >
             Start Your Project

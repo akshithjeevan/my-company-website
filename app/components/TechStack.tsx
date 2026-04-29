@@ -3,7 +3,7 @@
 import LogoLoop from '../../components/ui/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiVercel, SiFigma, SiGithub, SiJavascript, SiFirebase, SiPrisma, SiHtml5, SiApple } from 'react-icons/si';
 
-const commonClasses = "w-12 h-12 text-muted-foreground dark:text-white/50 transition-all duration-500 group-hover:text-primary dark:group-hover:text-purple-400 drop-shadow-none group-hover:drop-shadow-[0_0_15px_rgba(109,40,217,0.2)] group-hover:scale-110";
+const commonClasses = "w-12 h-12 text-muted-foreground dark:text-white/50 transition-all duration-500 group-hover:text-primary dark:group-hover:text-purple-400 drop-shadow-none group-hover:drop-shadow-[0_0_15px_rgba(109,40,217,0.2)]";
 
 const techLogos = [
   { node: <SiReact className={commonClasses} />, title: "React", href: "https://react.dev" },
@@ -35,7 +35,7 @@ export default function TechStack() {
           logoHeight={50}
           gap={80}
           hoverSpeed={0}
-          scaleOnHover={true}
+          scaleOnHover={false}
           fadeOut={true}
           fadeOutColor="var(--background)"
           ariaLabel="Technology partners"

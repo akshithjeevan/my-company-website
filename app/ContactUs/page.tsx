@@ -217,7 +217,7 @@ export default function ContactUsPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="#connect"
+              href="/ContactUs"
               className="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-8 py-4 text-base font-bold text-white transition hover:bg-purple-500 hover:shadow-[0_0_50px_rgba(168,85,247,0.45)]"
             >
               Start Your Project
