@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import StarBorder from '../components/StarBorder';
-import { Rocket, Home, Users, LayoutGrid, FolderKanban, Briefcase } from 'lucide-react';
+import { Rocket, Home, Users, LayoutGrid, FolderKanban, Briefcase, Zap } from 'lucide-react';
 
 export default function Header() {
   const pathname = usePathname();
@@ -13,9 +13,17 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-header-background backdrop-blur-xl px-4 md:px-6 py-3 md:py-4 text-foreground transition-colors duration-300 shadow-[0_8px_32px_rgba(109,40,217,0.05)] dark:shadow-[0_1px_40px_rgba(109,40,217,0.22),0_1px_0_rgba(139,92,246,0.28)]">
       <div className="mx-auto flex md:grid max-w-7xl md:grid-cols-[1fr_auto_1fr] items-center justify-between gap-4 md:gap-6">
         <div className="justify-self-start shrink-0">
-          <h1 className="text-sm md:text-lg font-semibold uppercase tracking-[0.1em] md:tracking-[0.18em]">
-            Zyntrix Labs
-          </h1>
+          <Link href="/" className="flex items-center gap-2 group transition-all duration-300">
+            {/* Mobile Logo */}
+            <div className="flex md:hidden items-center justify-center w-9 h-9 rounded-lg bg-purple-600/10 dark:bg-purple-500/20 border border-purple-500/20 shadow-[0_0_15px_rgba(147,51,234,0.1)] group-hover:scale-105 transition-transform">
+              <Zap className="text-purple-600 dark:text-purple-400 fill-purple-600/20" size={20} />
+            </div>
+            
+            {/* Desktop Text */}
+            <h1 className="hidden md:block text-sm md:text-lg font-semibold uppercase tracking-[0.18em] transition-colors group-hover:text-purple-600 dark:group-hover:text-purple-400">
+              Zyntrix Labs
+            </h1>
+          </Link>
         </div>
 
         <nav className="flex items-center justify-center gap-2 md:gap-6 text-sm">
