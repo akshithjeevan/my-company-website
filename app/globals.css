@@ -206,19 +206,17 @@ a[href*="spline.design"] {
 }
 
 .premium-text-gradient {
-   background: linear-gradient(135deg, #000000 0%, #1f2937 50%, #4b5563 100%);
+  background: linear-gradient(135deg, #000000 0%, #1f2937 50%, #4b5563 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .dark .premium-text-gradient {
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #d1d5db 50%,
-    #9ca3af 100%
-  );
+  background: linear-gradient(135deg,
+      #ffffff 0%,
+      #d1d5db 50%,
+      #9ca3af 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -427,7 +425,8 @@ a[href*="spline.design"] {
   padding: 12px 32px;
   font-size: 16px;
   font-weight: 700;
-  border-radius: 9999px; /* njX UI uses full radius by default */
+  border-radius: 9999px;
+  /* njX UI uses full radius by default */
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -437,7 +436,8 @@ a[href*="spline.design"] {
 /* Outline style */
 .btn-outline {
   background: transparent;
-  color: #6d28d9; /* Visible purple in light mode */
+  color: #6d28d9;
+  /* Visible purple in light mode */
   border: 2px solid #6d28d9;
 }
 
@@ -449,7 +449,8 @@ a[href*="spline.design"] {
 }
 
 .dark .btn-outline {
-  color: #c4b5fd; /* Luminous violet in dark mode */
+  color: #c4b5fd;
+  /* Luminous violet in dark mode */
   border-color: #a855f7;
 }
 
@@ -467,22 +468,18 @@ a[href*="spline.design"] {
   left: -150%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.6),
-    transparent
-  );
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent);
   transform: skewX(-20deg);
 }
 
 .dark .hover-shimmer::before {
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
 }
 
 /* Animate on hover */

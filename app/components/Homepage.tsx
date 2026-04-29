@@ -100,8 +100,8 @@ export default function Home() {
       </div>
 
       {/* 🌫 Fog Gradient (no blur) */}
-      <div className="absolute bottom-0 left-0 w-full h-64 pointer-events-none z-10">
-        <div className="w-full h-full bg-gradient-to-t from-background via-background/70 via-40% to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-100 pointer-events-none z-10">
+        <div className="w-full h-full bg-gradient-to-t from-background via-background/90 via-30% to-transparent" />
       </div>
 
       {/* 🧠 HERO TEXT (Two-line layout) */}

@@ -214,7 +214,7 @@ export default function WhoWeArePage() {
 
               <div className="mt-6 rounded-[1.5rem] border border-purple-500/10 dark:border-purple-500/20 bg-purple-600/[0.03] dark:bg-purple-900/10 p-6 relative z-10 transition hover:border-purple-500/30 duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-foreground dark:bg-white text-background dark:text-black shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                  <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.1)]">
                     <Lightbulb className="h-6 w-6" />
                   </div>
                   <div>
@@ -268,7 +268,7 @@ export default function WhoWeArePage() {
                   className="rounded-[1.75rem] border border-border dark:border-purple-500/22 bg-white/90 dark:bg-[rgba(14,9,28,0.65)] p-6 shadow-sm group hover:border-purple-500/50 dark:hover:border-purple-400/55 hover:bg-white dark:hover:bg-[rgba(20,12,45,0.88)] hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(139,92,246,0.12)] dark:hover:shadow-[0_0_44px_rgba(109,40,217,0.32)] transition-all duration-500 relative overflow-hidden"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-foreground dark:bg-white text-background dark:text-black transition-all duration-300 group-hover:bg-purple-600 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                    <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 transition-all duration-300 group-hover:bg-purple-600 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                       <Icon className="h-6 w-6" />
                     </div>
                     <div>
@@ -508,8 +508,8 @@ export default function WhoWeArePage() {
                     <div className="relative z-10 flex flex-col h-full">
                       {/* Header: Icon + Title horizontally aligned */}
                       <div className="flex items-center gap-5 mb-6">
-                        <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-black shadow-sm transition-all duration-500 group-hover/partner:scale-110 group-hover/partner:border-purple-500/50 group-hover/partner:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
-                          <Icon className="h-6 w-6 text-foreground dark:text-white transition-colors duration-500 group-hover/partner:text-purple-600 dark:group-hover/partner:text-purple-400" />
+                        <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-purple-100 dark:border-white/10 bg-purple-50 dark:bg-purple-900/20 shadow-sm transition-all duration-500 group-hover/partner:scale-110 group-hover/partner:border-purple-500/50 group-hover/partner:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+                          <Icon className="h-6 w-6 text-purple-600 dark:text-purple-400 transition-colors duration-500 group-hover/partner:text-purple-600 dark:group-hover/partner:text-purple-400" />
                         </div>
                         <h3 className="text-xl font-bold tracking-tight text-foreground dark:text-white group-hover/partner:text-purple-600 dark:group-hover/partner:text-purple-300 transition-colors duration-500">
                           {item.title}
